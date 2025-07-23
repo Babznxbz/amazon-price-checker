@@ -1,16 +1,9 @@
 services:
   - type: web
-    name: amazon-price-checker
-    env: python
-    plan: free
+    name: amazon-scraper-ui
+    runtime: python
+    pythonVersion: 3.11.9
     buildCommand: |
       pip install -r requirements.txt
       playwright install
     startCommand: gunicorn app:app
-    runtime: python
-    region: oregon
-    branch: main
-    autoDeploy: true
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.9
