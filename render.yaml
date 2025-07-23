@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: amazon-scraper-ui
-    runtime: python
-    pythonVersion: 3.11.9
-    buildCommand: |
-      pip install -r requirements.txt
-      playwright install
-    startCommand: gunicorn app:app
