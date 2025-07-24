@@ -3,4 +3,6 @@ services:
     name: amazon-price-checker
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python -m playwright install chromium && gunicorn app:app
+    startCommand:|
+    python -m playwright install chromium 
+    gunicorn app:app
